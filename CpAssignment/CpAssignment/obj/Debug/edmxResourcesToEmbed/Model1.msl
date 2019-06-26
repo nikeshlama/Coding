@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dailyexpensessystemModelStoreContainer" CdmEntityContainer="dailyexpensessystemEntities">
+    <EntitySetMapping Name="expense_tbl">
+      <EntityTypeMapping TypeName="dailyexpensessystemModel.expense_tbl">
+        <MappingFragment StoreEntitySet="expense_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="money" ColumnName="money" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expense1_tbl">
+      <EntityTypeMapping TypeName="dailyexpensessystemModel.expense1_tbl">
+        <MappingFragment StoreEntitySet="expense1_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="money" ColumnName="money" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chart_tbl">
+      <EntityTypeMapping TypeName="dailyexpensessystemModel.chart_tbl">
+        <MappingFragment StoreEntitySet="chart_tbl">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expenses_tbl">
+      <EntityTypeMapping TypeName="dailyexpensessystemModel.expenses_tbl">
+        <MappingFragment StoreEntitySet="expenses_tbl">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="money" ColumnName="money" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="register_tbl">
+      <EntityTypeMapping TypeName="dailyexpensessystemModel.register_tbl">
+        <MappingFragment StoreEntitySet="register_tbl">
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Hint" ColumnName="Hint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

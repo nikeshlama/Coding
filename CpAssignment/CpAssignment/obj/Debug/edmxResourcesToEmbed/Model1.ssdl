@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dailyexpensessystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dailyexpensessystem.dbo.Biodata' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Biodata">
+          <Property Name="id" Type="int" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="image" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dailyexpensessystem.dbo.chart_tbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="chart_tbl">
+    <Key>
+      <PropertyRef Name="title" />
+      <PropertyRef Name="total" />
+    </Key>
+    <Property Name="title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="total" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="expense_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="money" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="expense1_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="money" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" />
+    <Property Name="total" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dailyexpensessystem.dbo.expenses_tbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="expenses_tbl">
+    <Key>
+      <PropertyRef Name="title" />
+      <PropertyRef Name="money" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="description" />
+    </Key>
+    <Property Name="title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="money" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dailyexpensessystem.dbo.register_tbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="register_tbl">
+    <Key>
+      <PropertyRef Name="Firstname" />
+      <PropertyRef Name="Lastname" />
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Hint" />
+    </Key>
+    <Property Name="Firstname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lastname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Hint" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="dailyexpensessystemModelStoreContainer">
+    <EntitySet Name="expense_tbl" EntityType="Self.expense_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="expense1_tbl" EntityType="Self.expense1_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chart_tbl" EntityType="Self.chart_tbl" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [chart_tbl].[title] AS [title], 
+    [chart_tbl].[total] AS [total]
+    FROM [dbo].[chart_tbl] AS [chart_tbl]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="expenses_tbl" EntityType="Self.expenses_tbl" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [expenses_tbl].[title] AS [title], 
+    [expenses_tbl].[money] AS [money], 
+    [expenses_tbl].[date] AS [date], 
+    [expenses_tbl].[description] AS [description]
+    FROM [dbo].[expenses_tbl] AS [expenses_tbl]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="register_tbl" EntityType="Self.register_tbl" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [register_tbl].[Firstname] AS [Firstname], 
+    [register_tbl].[Lastname] AS [Lastname], 
+    [register_tbl].[Username] AS [Username], 
+    [register_tbl].[Password] AS [Password], 
+    [register_tbl].[Hint] AS [Hint]
+    FROM [dbo].[register_tbl] AS [register_tbl]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
